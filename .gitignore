@@ -1,3 +1,6 @@
 .DS_Store
 hub/
 .ipynb_checkpoints/
+app/
+models/
+README.md
