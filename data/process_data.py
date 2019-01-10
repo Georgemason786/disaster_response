@@ -38,6 +38,7 @@ def clean_data(df):
     for column in categories:
         categories[column] = categories[column].str[-1]
         categories[column] = pd.to_numeric(categories[column])
+        categories.loc[categories[column]>=1, column] = 1
 
     # Replace categories column in df with new category columns
     df = df.drop(['categories'], axis=1)
