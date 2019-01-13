@@ -2,6 +2,5 @@
 hub/
 .ipynb_checkpoints/
 app/
-models/
 README.md
 __pycache__
