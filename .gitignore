@@ -1,6 +1,5 @@
 .DS_Store
 hub/
 .ipynb_checkpoints/
-app/
 README.md
 __pycache__

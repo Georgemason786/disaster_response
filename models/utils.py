@@ -64,6 +64,7 @@ class StartingVerbExtractor(BaseEstimator, TransformerMixin):
 
 
 # Create custom transformer
+entity_list = ['TIME', 'PERSON', 'GPE', 'DATE', 'NORP', 'MONEY', 'ORG', 'QUANTITY', 'CARDINAL', 'PERCENT', 'LOC', 'PRODUCT', 'FAC', 'ORDINAL', 'WORK_OF_ART', 'LANGUAGE', 'LAW', 'EVENT'] # https://spacy.io/api/annotation#named-entities
 nlp = spacy.load('en_core_web_lg')
 class NamedEntityExtractor(BaseEstimator, TransformerMixin):
     def __init__(self):
@@ -73,6 +74,9 @@ class NamedEntityExtractor(BaseEstimator, TransformerMixin):
         doc = nlp(text)
         labels = [ent.label_ for ent in doc.ents]
         labels_count = Counter(labels)
+        for ent in entity_list:
+            if ent not in labels_count.keys():
+                labels_count[ent] = 0
         return labels_count
 
     # Fit method
@@ -83,4 +87,5 @@ class NamedEntityExtractor(BaseEstimator, TransformerMixin):
     def transform(self, X):
         X_ent = X.apply(self.named_entities).apply(pd.Series)
         X_ent = X_ent.fillna(0)
+        X_ent = X_ent[entity_list]
         return X_ent
