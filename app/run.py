@@ -157,10 +157,11 @@ def index():
                 'yaxis': {
                     'showgrid': False, 
                     'showticklabels': False, 
-                    'zeroline': False
+                    'zeroline': False,
+                    'range': [-len(words)*0.1, len(words)*1.15]
                 },
                 'title': '100 Most Frequent Words Appearing in Messages <br> Larger Text Represents Higher Frequency',
-            #     'height' : 600,s
+            #     'height' : 600,
             #     'width' : 1200,
             }
         },
