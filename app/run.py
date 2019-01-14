@@ -44,9 +44,11 @@ model = pickle.load(open("../models/classifier.pkl", 'rb'))
 @app.route('/index')
 def index():
     
-    # extract data needed for visuals
+    # calculate number of messages by genre
     genre_counts = df.groupby('genre').count()['message']
     genre_names = [x.title() for x in genre_counts.index]
+
+    # calculate number of messages by category
     category_counts = df[df.columns[4:]].sum().sort_values(ascending=False)
     category_names = [x.replace('_', ' ').title() for x in category_counts.index]
     
@@ -67,7 +69,6 @@ def index():
     weights = top.values ** 0.8 / 9
     
     # create visuals
-    # TODO: Below is an example - modify to create your own visuals
     graphs = [
         # Graph 1
         {
@@ -187,7 +188,7 @@ def go():
     classification_labels = model.predict(pd.Series([query], name='message'))[0]
     classification_results = dict(zip(df.columns[4:], classification_labels))
 
-    # This will render the go.html Please see that file. 
+    # render the go.html
     return render_template(
         'go.html',
         query=query,
