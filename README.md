@@ -1,14 +1,19 @@
 # Disaster Response
 
-<!-- TOC -->autoauto- [Disaster Response](#disaster-response)auto    - [1. Background](#1-background)auto    - [2. File Descriptions](#2-file-descriptions)auto    - [3. Instructions](#3-instructions)auto    - [4. Python version and libraries](#4-python-version-and-libraries)auto    - [5. Screenshots of web application](#5-screenshots-of-web-application)autoauto<!-- /TOC -->
+- [Disaster Response](#disaster-response)
+  - [1. Background](#1-background)
+  - [2. File Descriptions](#2-file-descriptions)
+  - [3. Instructions](#3-instructions)
+  - [4. Python version and libraries](#4-python-version-and-libraries)
+  - [5. Screenshots of web application](#5-screenshots-of-web-application)
 
 ## 1. Background
 
-This project uses natural language processing (NLP) and machine learning to classify social media messages during disastrous events.
+This project uses natural language processing (NLP) and machine learning to classify social media messages for disaster events.
 
 **Objectives:** (1) build a command line application that creates messages classifier based on input dataset; and (2) build a web application that visualizes the dataset and predicts categories of a new input message.
 
-**Dataset:** The dataset of social media messages during disastrous events and 36 categories was given by Udacity Nanodegree program in partner with [Figure Eight](https://www.figure-eight.com/data-for-everyone/).
+**Dataset:** The dataset of social media messages for disaster events and 36 categories was given by Udacity Nanodegree program in partner with [Figure Eight](https://www.figure-eight.com/data-for-everyone/).
 
 ## 2. File Descriptions
 
@@ -60,7 +65,6 @@ The code was developed using the Anaconda distribution of Python version 3.6. Th
 `sklearn` <br>
 `plotly` <br>
 `spacy` (`en_core_web_sm` and `en_core_web_lg`) <br>
-`sqlalchemy` <br>
 `flask`
 
 ## 5. Screenshots of web application
